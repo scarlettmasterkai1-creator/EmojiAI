@@ -1,0 +1,355 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Register | EmojiAI</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 25px 15px;
+            font-family: 'DM Sans', sans-serif;
+            background: #faf8fc;
+            color: #29243a;
+        }
+
+        /* Main registration container */
+
+        .register-container {
+            width: 100%;
+            max-width: 440px;
+        }
+
+        .register-card {
+            background: #ffffff;
+            padding: 38px;
+            border-radius: 20px;
+            border: 1px solid #eee5f2;
+            box-shadow: 0 10px 35px rgba(70, 35, 90, 0.08);
+            text-align: center;
+        }
+
+        /* Logo */
+
+        .logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .logo span {
+            font-size: 38px;
+        }
+
+        .logo h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 30px;
+            font-weight: 800;
+
+            background: linear-gradient(
+                45deg,
+                #feda75,
+                #fa7e1e,
+                #d62976,
+                #962fbf,
+                #4f5bd5
+            );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* Heading */
+
+        .register-header h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 27px;
+            margin-bottom: 10px;
+            color: #29243a;
+        }
+
+        .register-header p {
+            color: #898294;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        /* Form */
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 14px 15px;
+            border: 1px solid #e5dce9;
+            border-radius: 10px;
+            background: #faf8fc;
+            font-size: 14px;
+            font-family: 'DM Sans', sans-serif;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .form-group input:focus {
+            border-color: #d62976;
+            background: #ffffff;
+            box-shadow: 0 0 0 3px rgba(214, 41, 118, 0.08);
+        }
+
+        /* Register button */
+
+        .register-btn {
+            width: 100%;
+            padding: 15px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 10px;
+
+            background: linear-gradient(
+                45deg,
+                #feda75,
+                #fa7e1e,
+                #d62976,
+                #962fbf,
+                #4f5bd5
+            );
+
+            color: white;
+            font-size: 15px;
+            font-weight: 700;
+            font-family: 'DM Sans', sans-serif;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .register-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(214, 41, 118, 0.2);
+        }
+
+        /* Login link */
+
+        .register-footer {
+            margin-top: 25px;
+            font-size: 14px;
+            color: #898294;
+        }
+
+        .register-footer a {
+            color: #c13584;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .register-footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Mobile design */
+
+        @media (max-width: 480px) {
+
+            .register-card {
+                padding: 28px 20px;
+            }
+
+            .register-header h1 {
+                font-size: 24px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="register-container">
+
+        <div class="register-card">
+
+            <div class="logo">
+                <span>😊</span>
+                <h2>EmojiAI</h2>
+            </div>
+
+            <div class="register-header">
+
+                <h1>Create Account</h1>
+
+                <p>
+                    Join EmojiAI and transform your facial
+                    expressions into personalised emojis.
+                </p>
+
+            </div>
+            </div>
+
+<!-- REGISTRATION STATUS AND VALIDATION MESSAGES -->
+<div id="registrationMessage"
+     role="alert"
+     aria-live="polite"
+     style="margin-bottom: 15px; font-size: 14px;">
+</div>
+
+<form action="register.php" method="POST" id="registerForm">
+
+            <form action="register.php" method="POST" id="registerForm">
+
+                <div class="form-group">
+                    <input type="text"
+                           name="firstname"
+                           placeholder="First Name"
+                           required>
+                </div>
+
+                <div class="form-group">
+                    <input type="text"
+                           name="lastname"
+                           placeholder="Last Name"
+                           required>
+                </div>
+
+                <div class="form-group">
+                    <input type="email"
+                           name="email"
+                           placeholder="Email Address"
+                           required>
+                </div>
+
+                <div class="form-group">
+                    <input type="text"
+                           name="username"
+                           placeholder="Username"
+                           required>
+                </div>
+
+                <div class="form-group">
+                    <input type="password"
+                           name="password"
+                           placeholder="Password"
+                           required>
+                </div>
+
+                <button type="submit" class="register-btn">
+                    Create Account →
+                </button>
+
+            </form>
+
+            <div class="register-footer">
+
+                <p>
+                    Already have an account?
+                    <a href="login.php">Login</a>
+                </p>
+
+            
+        </div>
+    </div>
+
+    <!-- REGISTRATION JAVASCRIPT -->
+    <script>
+
+        const registerForm = document.getElementById("registerForm");
+
+        const registrationMessage =
+            document.getElementById("registrationMessage");
+
+
+        registerForm.addEventListener("submit", async function(event) {
+
+            event.preventDefault();
+
+            registrationMessage.textContent =
+                "Creating your account...";
+
+            registrationMessage.style.color = "#8134af";
+
+            const formData = new FormData(registerForm);
+
+            try {
+
+                const response = await fetch("register.php", {
+
+                    method: "POST",
+
+                    body: formData
+
+                });
+
+                const result = await response.json();
+
+
+                if (result.success) {
+
+                    registrationMessage.textContent = result.message;
+
+                    registrationMessage.style.color = "green";
+
+                    registerForm.reset();
+
+                    setTimeout(function() {
+
+                        window.location.href =
+                            "index.php?registered=success";
+
+                    }, 1500);
+
+                } else {
+
+                    registrationMessage.textContent =
+                        Array.isArray(result.errors)
+                            ? result.errors.join(" ")
+                            : "Registration failed. Please try again.";
+
+                    registrationMessage.style.color = "#d62976";
+
+                }
+
+            } catch (error) {
+
+                console.error("Registration error:", error);
+
+                registrationMessage.textContent =
+                    "Unable to connect to the registration service. Please try again.";
+
+                registrationMessage.style.color = "#d62976";
+
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>

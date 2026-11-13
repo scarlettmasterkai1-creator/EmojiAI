@@ -1,0 +1,46 @@
+
+# Python virtual environment
+backend/.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# Python cache and testing
+.pytest_cache/
+.mypy_cache/
+
+# Node dependencies
+node_modules/
+
+# Temporary files
+*.log
+*.tmp
+temp/
+cache/
+
+# Webcam recordings and user uploads
+uploads/*
+!uploads/.gitkeep
+recordings/
+*.webm
+*.mp4
+
+# Training datasets
+backend/dataset/
+dataset/
+
+# Large trained model - upload separately if required
+backend/models/*.keras
+backend/models/*.h5
+
+# Private configuration
+.env
+.env.*
+!.env.example
+config.local.php
+
+# IDE and operating system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,26 @@
+
+{
+    "app_name": "EmojiAI",
+    "version": "1.0.0",
+    "debug": true,
+
+    "api_host": "127.0.0.1",
+    "api_port": 5000,
+
+    "max_image_size_mb": 5,
+
+    "allowed_origins": [
+        "http://localhost",
+        "http://127.0.0.1",
+        "http://localhost:8080",
+        "http://127.0.0.1:8080"
+    ],
+
+    "emotions": [
+        "Angry",
+        "Happy",
+        "Neutral",
+        "Sad",
+        "Surprise"
+    ]
+}
