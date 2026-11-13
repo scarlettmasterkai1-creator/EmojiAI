@@ -1,0 +1,28 @@
+
+# Python environment
+backend/.venv/
+__pycache__/
+*.py[cod]
+
+# Configuration and secrets
+.env
+.env.*
+!.env.example
+config.local.php
+
+# Database and temporary files
+*.log
+*.tmp
+uploads/
+temp/
+
+# IDE files
+.vscode/
+.idea/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Python cache
+.pytest_cache/
